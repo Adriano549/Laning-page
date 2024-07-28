@@ -15,7 +15,7 @@ Sou um desenvolvedor front-end júnior com conhecimento em HTML, CSS, JavaScript
 
 ### Página de Apresentação de Aparelhos Dentários
 - Página baseada nos trabalhos de próteses dentárias da minha mãe.
-- Tecnologias: React, TypeScript.
+- Tecnologias: React, TypeScript , JavaScript.
 - [Link para o projeto]
 
 ## Tecnologias Utilizadas
