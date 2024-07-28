@@ -24,6 +24,10 @@ export const Text = styled.div `
     align-items: center;
     transform: translateY(800px);
     opacity: 0;
+    @media (max-width: 768px) { 
+        transform: translateY(0px);
+        opacity: 1;
+    }
     p {
         font-size: 16px;
         font-weight: 400;
