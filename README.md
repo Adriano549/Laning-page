@@ -29,7 +29,7 @@ Sou um desenvolvedor front-end júnior com conhecimento em HTML, CSS, JavaScript
 
 ## Visualizando a Página
 
-Para visualizar minha página de apresentação, visite [meu site no GitHub Pages](https://Adriano549.github.io).
+Para visualizar minha página de apresentação, visite [meu site no GitHub Pages](https://adriano549.github.io/Laning-page/).
 
 ## Contato
 
