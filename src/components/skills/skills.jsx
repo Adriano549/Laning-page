@@ -47,11 +47,14 @@ const Skills = () => {
                 </Text>
             </div>
             <div>
-                <h2>{"<"}Bibliotecas React{"/>"}</h2>
+                <h2>{"<"}Bibliotecas{"/>"}</h2>
                 <Text>
                     <p>Styled Components</p>
                     <p>Axios</p>
                     <p>React Router Dom</p>
+                    <p>Jest</p>
+                    <p>ViTest</p>
+                    <p>Material-Ui</p>
                 </Text>
             </div>
         </Section>

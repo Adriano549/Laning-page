@@ -9,7 +9,7 @@ export const Container = styled.section`
     ul { 
         width: 100%;
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        grid-template-columns: 1fr;
         grid-auto-rows: minmax(250px, auto); 
         gap: 20px; 
     }
@@ -19,17 +19,15 @@ export const Container = styled.section`
         text-align: center;
         border: 2px solid #ddd;
         border-radius: 8px;
-        
+        display: flex;
         color: black; 
+        align-items: center;
     }
     div {
-        width: 100%;
-        height: 200px; 
-        background-size: cover; 
-        background-position: center;
-        background-repeat: no-repeat; 
+        width: 100%;  
         border-radius: 8px;
         margin-bottom: 10px; 
+
     }
     h3 {
         font-size: 18px;
@@ -47,4 +45,4 @@ export const Container = styled.section`
     a:hover {
         text-decoration: underline;
     }
-`;
+`
