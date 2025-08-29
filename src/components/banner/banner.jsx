@@ -30,7 +30,7 @@ const Info = () => {
                 <TextContent>
                     <TitleContainer>
                         <h1>{"<"}Adriano de Almeida{"/>"}</h1>
-                        <TypewriterText>Desenvolvedor Front-End Junior</TypewriterText>
+                        <TypewriterText>Desenvolvedor Full-stack Junior</TypewriterText>
                     </TitleContainer>
                     
                     <SocialContainer>
