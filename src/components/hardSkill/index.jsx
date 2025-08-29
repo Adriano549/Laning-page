@@ -41,16 +41,16 @@ const HardSkills = () => {
     }, []);
 
     const skills = [
-        { icon: <FaHtml5 />, name: "HTML", level: 90, color: "#E34F26" },
-        { icon: <FaCss3 />, name: "CSS", level: 85, color: "#1572B6" },
-        { icon: <IoLogoJavascript />, name: "JavaScript", level: 80, color: "#F7DF1E" },
-        { icon: <FaReact />, name: "React", level: 85, color: "#61DAFB" },
-        { icon: <SiTypescript />, name: "TypeScript", level: 75, color: "#3178C6" },
-        { icon: <SiNodedotjs />, name: "Node.js", level: 70, color: "#339933" },
-        { icon: <SiNextdotjs />, name: "Next.js", level: 80, color: "#000000" },
-        { icon: <SiDjango />, name: "Django", level: 65, color: "#092E20" },
-        { icon: <SiPostgresql />, name: "PostgreSQL", level: 70, color: "#336791" },
-        { icon: <FaGithub />, name: "GitHub", level: 85, color: "#181717" }
+        { icon: <FaHtml5 />, name: "HTML", level: 100, color: "#E34F26" },
+        { icon: <FaCss3 />, name: "CSS", level: 100, color: "#1572B6" },
+        { icon: <IoLogoJavascript />, name: "JavaScript", level: 100, color: "#F7DF1E" },
+        { icon: <FaReact />, name: "React", level: 100, color: "#61DAFB" },
+        { icon: <SiTypescript />, name: "TypeScript", level: 100, color: "#3178C6" },
+        { icon: <SiNodedotjs />, name: "Node.js", level: 100, color: "#339933" },
+        { icon: <SiNextdotjs />, name: "Next.js", level: 100, color: "#000000" },
+        { icon: <SiDjango />, name: "Django", level: 100, color: "#092E20" },
+        { icon: <SiPostgresql />, name: "PostgreSQL", level: 100, color: "#336791" },
+        { icon: <FaGithub />, name: "GitHub", level: 100, color: "#181717" }
     ];
 
     return (
@@ -73,7 +73,7 @@ const HardSkills = () => {
                                 style={{ width: `${skill.level}%` }}
                             ></div>
                         </div>
-                        <span className="level">{skill.level}%</span>
+                        
                     </SkillItem>
                 ))}
             </SkillsGrid>
