@@ -1,57 +1,151 @@
-import { Container } from "./styled";
 import Projeto1Gif from "../../img/projetos/projeto-funcionando.gif"
-import { FaGithub } from "react-icons/fa";
-import { FaSitemap } from "react-icons/fa6";
+import { FaGithub, FaShoppingCart, FaExternalLinkAlt } from "react-icons/fa";
 import { GiMagicBroom, GiCardRandom } from "react-icons/gi";
 import Projeto2Gif from "../../img/projetos/projeto-mae.gif";
 import { FaTooth } from "react-icons/fa6";
 import Projeto3Git from "../../img/projetos/projeto-yugioh.gif"
+import Projeto4 from "../../img/projetos/E-commerc-vela.png"
+import { useState } from "react";
+import {
+    Container,
+    ActionButton,
+    ActionButtons,
+    CategoryBadge,
+    ContentContainer,
+    Header,
+    IconWrapper,
+    ImageContainer,
+    ImageOverlay,
+    ProjectCard,
+    ProjectDescription,
+    ProjectHeader,
+    ProjectImage,
+    ProjectTitle,
+    ProjectsGrid,
+    Subtitle,
+    TechStack,
+    TechTag,
+    TitleContainer
+} from "./styled"
 
 const Projetos = () => {
+    const [hoveredProject, setHoveredProject] = useState(null);
+
+    const projects = [
+        {
+            id: 1,
+            title: "Taverna Mágica",
+            icon: <GiMagicBroom />,
+            description: "E-commerce completo com itens baseados em um mundo de fantasia (RPG). Uma experiência imersiva de compras online.",
+            technologies: ["React.js", "JavaScript", "HTML", "CSS"],
+            image: Projeto1Gif,
+            liveUrl: "https://adriano549.github.io/taverna_magica__/",
+            githubUrl: "https://github.com/Adriano549/taverna_magica__",
+            category: "E-commerce"
+        },
+        {
+            id: 2,
+            title: "Sheilla Labor Orto",
+            icon: <FaTooth />,
+            description: "Site profissional para apresentação de trabalhos em próteses dentárias e serviços especializados.",
+            technologies: ["React.js", "JavaScript", "TypeScript", "Jest", "HTML", "CSS"],
+            image: Projeto2Gif,
+            liveUrl: "https://adriano549.github.io/Laning-page-mae/",
+            githubUrl: "https://github.com/Adriano549/Laning-page-mae",
+            category: "Landing Page"
+        },
+        {
+            id: 3,
+            title: "Yu-Gi-Oh API Explorer",
+            icon: <GiCardRandom />,
+            description: "Aplicação que consome a API do Yu-Gi-Oh para exibir cartas com filtros avançados e interface moderna.",
+            technologies: ["React.js", "JavaScript", "TypeScript", "Vitest", "Material-UI", "CSS"],
+            image: Projeto3Git,
+            liveUrl: "https://adriano549.github.io/API-yu-gi-oh",
+            githubUrl: "https://github.com/Adriano549/API-yu-gi-oh.git",
+            category: "API Integration"
+        },
+        {
+            id: 4,
+            title: "E-commerce de Velas",
+            icon: <FaShoppingCart />,
+            description: "E-commerce completo com autenticação de usuários, carrinho de compras, área do cliente e painel de administração.",
+            technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Shadcn/UI", "Zustand", "Prisma", "PostgreSQL", "NextAuth.js", "Jest"],
+            image: Projeto4,
+            liveUrl: "https://e-commerce-velas.vercel.app/",
+            githubUrl: "https://github.com/Adriano549/e-commerce-velas",
+            category: "Full-Stack"
+        }
+    ];
+
     return (
         <Container>
-            <h2>Projetos</h2>
-            <ul>
-                <li>
-                    <div>
-                        <h3>Projeto 1 - <GiMagicBroom /> Taverna Mágica<GiMagicBroom /></h3>
-                        <img src={Projeto1Gif} alt="" />
-                    </div>
-                    <div>
-                        <p> Site de E-commerce com itens baseados em um mundo de fantasia (RPG)</p>
-                        <p>Nesse projeto foi usado React.JS , JavaScript, HTML e CSS</p>
-                        <a href="https://adriano549.github.io/taverna_magica__/" target="_blank" >Ver Projeto <FaSitemap /></a>
-                        <a href="https://github.com/Adriano549/taverna_magica__" target="_blank" >GitHub <FaGithub /></a>
-                        
-                    </div>
-                </li>
-                <li>
-                    <div>
-                        <h3>Projeto 2 - <FaTooth /> Sheilla Labor Orto <FaTooth /></h3>
-                        <img src={Projeto2Gif} alt="" />
-                    </div>
-                    <div>
-                        <p>Site onde irá apresentar alguns trabalhos da protética e apresentá-la</p>
-                        <p>Nesse projeto foi usado React.js , JavaScript, TypeScript , Jest, HTML  e CSS</p>
-                        <a href="https://adriano549.github.io/Laning-page-mae/" target="_blank" >Ver Projeto <FaSitemap /></a>
-                        <a href="https://github.com/Adriano549/Laning-page-mae" target="_blank">GitHub <FaGithub /></a>
-                    </div>
-                </li>
-                <li>
-                    <div>
-                        <h3>Projeto 3 - <GiCardRandom /> Site usando a API do Yu-gi-oh <GiCardRandom /></h3>
-                        <img src={Projeto3Git} alt="" />
-                    </div>
-                    <div>
-                        <p>Siste usando a API do yu-gi-oh para praticar um pouco sobre API e usando o Material-ui para o estilo</p>
-                        <p>Nesse projeto foi usado React.js , JavaScript,Vitest, TypeScript,  HTML e Material-UI, CSS.</p>
-                        <a href="https://adriano549.github.io/API-yu-gi-oh" target="_blank" >Ver Projeto <FaSitemap /></a>
-                        <a href="https://github.com/Adriano549/API-yu-gi-oh.git" target="_blank">GitHub <FaGithub /></a>
-                    </div>
-                </li>
-            </ul>
+            <Header>
+                <h2>{"<"}Meus Projetos{"/>"}</h2>
+                <Subtitle>Explore alguns dos projetos que desenvolvi</Subtitle>
+            </Header>
+            
+            <ProjectsGrid>
+                {projects.map((project) => (
+                    <ProjectCard
+                        key={project.id}
+                        onMouseEnter={() => setHoveredProject(project.id)}
+                        onMouseLeave={() => setHoveredProject(null)}
+                        isHovered={hoveredProject === project.id}
+                    >
+                        <ImageContainer>
+                            <ProjectImage 
+                                src={project.image} 
+                                alt={`Projeto ${project.title}`}
+                                loading="lazy"
+                            />
+                            <ImageOverlay isHovered={hoveredProject === project.id}>
+                                <CategoryBadge>{project.category}</CategoryBadge>
+                            </ImageOverlay>
+                        </ImageContainer>
+
+                        <ContentContainer>
+                            <ProjectHeader>
+                                <TitleContainer>
+                                    <IconWrapper>{project.icon}</IconWrapper>
+                                    <ProjectTitle>{project.title}</ProjectTitle>
+                                </TitleContainer>
+                            </ProjectHeader>
+
+                            <ProjectDescription>{project.description}</ProjectDescription>
+
+                            <TechStack>
+                                {project.technologies.map((tech, index) => (
+                                    <TechTag key={index}>{tech}</TechTag>
+                                ))}
+                            </TechStack>
+
+                            <ActionButtons>
+                                <ActionButton 
+                                    href={project.liveUrl} 
+                                    target="_blank" 
+                                    rel="noopener noreferrer"
+                                    primary
+                                >
+                                    <FaExternalLinkAlt />
+                                    Ver Projeto
+                                </ActionButton>
+                                <ActionButton 
+                                    href={project.githubUrl} 
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    <FaGithub />
+                                    Código
+                                </ActionButton>
+                            </ActionButtons>
+                        </ContentContainer>
+                    </ProjectCard>
+                ))}
+            </ProjectsGrid>
         </Container>
     );
 }
 
 export default Projetos;
+

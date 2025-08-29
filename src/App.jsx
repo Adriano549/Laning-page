@@ -1,8 +1,11 @@
 import './App.css'
 import  Header  from './components/nav/navigation'
 import  Info  from './components/banner/banner'
-import  Skills  from './components/skills/skills'
 import Projetos from './components/projetos'
+import Certificacoes from './components/certificacoes/'
+import About from './components/about'
+import HardSkills from './components/hardSkill'
+import SoftSkills from './components/soft-skills'
 
 function App() {
 
@@ -10,11 +13,20 @@ function App() {
     <>
       <Header/>
       <Info/>
+      <section id="sobre">
+        <About />
+      </section>
       <section id="skills">
-        <Skills />
+        <HardSkills />
+      </section>
+      <section id="soft-skills">
+        <SoftSkills />
       </section>
       <section id="projetos">
         <Projetos />
+      </section>
+      <section id="certificacoes">
+        <Certificacoes />
       </section>
     </>
   )

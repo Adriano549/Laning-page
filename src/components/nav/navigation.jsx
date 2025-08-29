@@ -1,17 +1,68 @@
-import styled from "styled-components"
+import { useState, useEffect } from "react"
+import { HeAder, Menu } from "./navBar-styled"
 
+const Header = () => {
+    const [scrolled, setScrolled] = useState(false);
 
-const Header =() => {
+    useEffect(() => {
+        const handleScroll = () => {
+            const offset = window.scrollY;
+            if (offset > 100) { 
+                setScrolled(true);
+            } else {
+                setScrolled(false);
+            }
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
+
+    const scrollToSection = (sectionId) => {
+        const element = document.getElementById(sectionId);
+        if (element) {
+            const headerHeight = 80; 
+            const elementPosition = element.offsetTop - headerHeight;
+            
+            window.scrollTo({
+                top: elementPosition,
+                behavior: 'smooth'
+            });
+        }
+    };
+
     return (
-        <HeAder>
+        <HeAder scrolled={scrolled}>
             <div>
-                <h2>AA</h2>
+                <h2><a href="#" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>AA</a></h2>
             </div>
             <nav>
-            <Menu>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#projetos">Projetos</a></li>               
-            </Menu>
+                <Menu>
+                    <li>
+                        <a href="#skills" onClick={(e) => {
+                            e.preventDefault();
+                            scrollToSection('skills');
+                        }}>
+                            Skills
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#projetos" onClick={(e) => {
+                            e.preventDefault();
+                            scrollToSection('projetos');
+                        }}>
+                            Projetos
+                        </a>
+                    </li>  
+                    <li>
+                        <a href="#certificacoes" onClick={(e) => {
+                            e.preventDefault();
+                            scrollToSection('certificacoes');
+                        }}>
+                            Certificados
+                        </a>
+                    </li>             
+                </Menu>
             </nav>
         </HeAder>
     )
@@ -19,34 +70,3 @@ const Header =() => {
 
 export default Header;
 
-const HeAder = styled.header `
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    min-height: 80px;
-    border-bottom: solid 2px #27002cdd;
-    h2{
-        font-size: 20px;
-        padding: 10px;
-        margin-left: 30px;
-        color: #e10dfddd;
-        border: #ffffff solid 2px;
-        border-radius: 70%;
-        font-weight: 500;
-    }
-`
-
-const Menu = styled.ul`
-    display: flex;
-    li{
-        padding: 10px;
-        font-size: 20px;
-        font-weight: bold;
-        margin-right: 60px;        
-    }
-        li:hover{
-            background-color: #af0d5e;
-            border-radius: 10px;
-            transition: 0.3s ;            
-        }
-`
