@@ -1,8 +1,6 @@
 import Projeto1Gif from "../../img/projetos/projeto-funcionando.gif"
 import { FaGithub, FaShoppingCart, FaExternalLinkAlt } from "react-icons/fa";
 import { GiMagicBroom, GiCardRandom } from "react-icons/gi";
-import Projeto2Gif from "../../img/projetos/projeto-mae.gif";
-import { FaTooth } from "react-icons/fa6";
 import Projeto3Git from "../../img/projetos/projeto-yugioh.gif"
 import Projeto4 from "../../img/projetos/E-commerc-vela.png"
 import { useState } from "react";
@@ -45,17 +43,6 @@ const Projetos = () => {
         },
         {
             id: 2,
-            title: "Sheilla Labor Orto",
-            icon: <FaTooth />,
-            description: "Site profissional para apresentação de trabalhos em próteses dentárias e serviços especializados.",
-            technologies: ["React.js", "JavaScript", "TypeScript", "Jest", "HTML", "CSS"],
-            image: Projeto2Gif,
-            liveUrl: "https://adriano549.github.io/Laning-page-mae/",
-            githubUrl: "https://github.com/Adriano549/Laning-page-mae",
-            category: "Landing Page"
-        },
-        {
-            id: 3,
             title: "Yu-Gi-Oh API Explorer",
             icon: <GiCardRandom />,
             description: "Aplicação que consome a API do Yu-Gi-Oh para exibir cartas com filtros avançados e interface moderna.",
@@ -66,7 +53,7 @@ const Projetos = () => {
             category: "API Integration"
         },
         {
-            id: 4,
+            id: 3,
             title: "E-commerce de Velas",
             icon: <FaShoppingCart />,
             description: "E-commerce completo com autenticação de usuários, carrinho de compras, área do cliente e painel de administração.",
